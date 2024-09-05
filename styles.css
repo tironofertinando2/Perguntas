@@ -1,7 +1,7 @@
-
 body {
     font-family: Arial, sans-serif;
-    background-color: #0278ff;
+   
+    background-color: #002f6d67;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -13,8 +13,8 @@ body {
     display: block;
     margin: 10px 0;
     padding: 10px;
-    background-color: #00ff88;
-    color: rgb(0, 0, 0);
+    background-color: #7bff00c0;
+    color: rgba(0, 0, 0, 0.979);
     border: none;
     cursor: pointer;
     text-align: center;
