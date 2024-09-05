@@ -1,63 +1,70 @@
 const perguntas = [
-{
-enunciado: " Como é chamado o jogador especializado em defesa no vôlei?",
-alternativas: [
-"Defendedor de quadra",
-"Libero"
-]
-},
-{
-enunciado: "Quantos jogadores há em uma equipe de vôlei?",
-alternativas: [
-"são 12 pessoas.",
-"são 6 pessoas."
-]
-},
-{
-enunciado: "Qual é a altura da rede de vôlei para equipes masculinas ?",
-alternativas: [
-"Para o masculino 2,90",
-"Para o masculino 2;43",
-
-]
-},
-{
-enunciado: "Qual é a pontuação necessária para vencer um set no vôlei?",
-alternativas: [
-"São 25 pontos ",
-"São 35 pontos."
-]
-
-},
-{
-enunciado: "Quantos sets uma equipe precisa vencer para ganhar uma partida de vôlei?",
-alternativas: [
-"São necessarios 2 X 0.",
-"São necessarios 3 sets."
-]
-}
+    {
+        enunciado: "Você acredita que a legalização das drogas recreativas deveria ser implementada",
+        alternativas: [
+            { texto: "Isso é assustador!", pontuacao: 1 },
+            { texto: "Isso é maravilhoso!", pontuacao: 2 }
+        ]
+    },
+    {
+        enunciado: "Você acha que o aborto deveria ser um direito irrestrito para todas as mulheres?",
+        alternativas: [
+            { texto: "Sim, as mulheres devem ter esse direito.", pontuacao: 2 },
+            { texto: "Não, deve haver restrições.", pontuacao: 1 }
+        ]
+    },
+    {
+        enunciado: "O ensino religioso deveria ser obrigatório nas escolas públicas?",
+        alternativas: [
+            { texto: "Sim, deveria ser obrigatório.", pontuacao: 2 },
+            { texto: "Não, não deveria ser obrigatório.", pontuacao: 1 }
+        ]
+    },
+    {
+        enunciado: "A pena de morte deve ser uma opção para crimes hediondos?",
+        alternativas: [
+            { texto: "Sim, deve ser aplicada.", pontuacao: 1 },
+            { texto: "Não, deve ser abolida.", pontuacao: 2 }
+        ]
+    },
+    {
+        enunciado: "O casamento entre pessoas do mesmo sexo deve ser reconhecido legalmente em todo o país?",
+        alternativas: [
+            { texto: "Sim, deve ser reconhecido.", pontuacao: 1 },
+            { texto: "Não, não deve ser reconhecido.", pontuacao: 2 }
+        ]
+    }
 ];
+
 let atual = 0;
+let pontuacao = 0; // Variável para armazenar a pontuação
 let perguntaAtual;
 const caixaPerguntas = document.getElementById('caixaPerguntas');
 const alternativasContainer = document.getElementById('alternativas');
+
 function mostraPergunta() {
-perguntaAtual = perguntas[atual];
-caixaPerguntas.textContent = perguntaAtual.enunciado;
-alternativasContainer.innerHTML = '';
-perguntaAtual.alternativas.forEach((alternativa, index) => {
-const button = document.createElement('button');
-button.textContent = alternativa;
-button.addEventListener('click', () => {
-atual++;
-if (atual < perguntas.length) {
-mostraPergunta();
-} else {
-caixaPerguntas.textContent = 'Você completou o questionário!';
-alternativasContainer.innerHTML = '';
+    perguntaAtual = perguntas[atual];
+    caixaPerguntas.textContent = perguntaAtual.enunciado;
+    alternativasContainer.innerHTML = '';
+    perguntaAtual.alternativas.forEach((alternativa) => {
+        const button = document.createElement('button');
+        button.textContent = alternativa.texto;
+        button.addEventListener('click', () => {
+            pontuacao += alternativa.pontuacao; // Incrementa a pontuação com base na alternativa selecionada
+            atual++;
+            if (atual < perguntas.length) {
+                mostraPergunta();
+            } else {
+                exibePontuacaoFinal(); // Chama função para exibir a pontuação final
+            }
+        });
+        alternativasContainer.appendChild(button);
+    });
 }
-});
-alternativasContainer.appendChild(button);
-});
+
+function exibePontuacaoFinal() {
+    caixaPerguntas.textContent = `Você completou o questionário! Sua pontuação final é: ${pontuacao}`;
+    alternativasContainer.innerHTML = ''; // Limpa as alternativas
 }
-mostraPergunta();
+
+mostraPergunta(); // Inicia o questionário mostrando a primeira pergunta
