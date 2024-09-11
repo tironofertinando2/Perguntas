@@ -1,37 +1,43 @@
 const perguntas = [
     {
-        enunciado: "Você acredita que a legalização das drogas recreativas deveria ser implementada",
+        enunciado: "Qual é a altura da rede no vôlei masculino e no feminino?",
         alternativas: [
-            { texto: "Isso é assustador!", pontuacao: 1 },
-            { texto: "Isso é maravilhoso!", pontuacao: 2 }
+            { texto: "a altura da rede é de 2,43!", pontuacao: 1 },
+            { texto: "No vôlei masculino, a altura da rede é de 2,43 metros; no feminino, é de 2,24 metros.!", pontuacao: 2 }
         ]
     },
     {
-        enunciado: "Você acha que o aborto deveria ser um direito irrestrito para todas as mulheres?",
+        enunciado: "Quantos jogadores há em cada equipe no vôlei?",
         alternativas: [
-            { texto: "Sim, as mulheres devem ter esse direito.", pontuacao: 2 },
-            { texto: "Não, deve haver restrições.", pontuacao: 1 }
+            { texto: "são 6 pessoas em quadra", pontuacao: 2 },
+            { texto: "são 12 pessoas em quadra", pontuacao: 1 }
         ]
     },
     {
-        enunciado: "O ensino religioso deveria ser obrigatório nas escolas públicas?",
+        enunciado: "O que é um "ace" no vôlei?
+
+",
         alternativas: [
-            { texto: "Sim, deveria ser obrigatório.", pontuacao: 2 },
-            { texto: "Não, não deveria ser obrigatório.", pontuacao: 1 }
+            { texto: "quando o saque vai errado.", pontuacao: 1 },
+            { texto: "ponto limpo do saque", pontuacao: 2 }
         ]
     },
     {
-        enunciado: "A pena de morte deve ser uma opção para crimes hediondos?",
+        enunciado: "Qual é a duração máxima permitida para um tempo técnico no vôlei?",
         alternativas: [
-            { texto: "Sim, deve ser aplicada.", pontuacao: 1 },
-            { texto: "Não, deve ser abolida.", pontuacao: 2 }
+            { texto: "dura mais de 40 minutos .", pontuacao: 2 },
+            { texto: "Cada tempo técnico tem a duração máxima de 30 segundos.", pontuacao: 1
+            }
         ]
     },
     {
-        enunciado: "O casamento entre pessoas do mesmo sexo deve ser reconhecido legalmente em todo o país?",
+        enunciado: "Qual é a regra básica sobre o número de toques permitidos antes que a bola deve ser enviada para o outro lado da quadra?
+
+",
         alternativas: [
-            { texto: "Sim, deve ser reconhecido.", pontuacao: 1 },
-            { texto: "Não, não deve ser reconhecido.", pontuacao: 2 }
+            { texto: "quatro toques seria o correto.", pontuacao: 1 },
+            { texto: "Cada equipe pode dar no máximo 3 toques na bola antes de enviá-la para o lado adversário.
+.", pontuacao: 2 }
         ]
     }
 ];
